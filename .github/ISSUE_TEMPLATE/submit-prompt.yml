@@ -51,6 +51,8 @@ body:
       description: "Briefly describe what this prompt generates. Include inspiration or source (e.g., 'Inspired by Hong Kong neon signs')"
       placeholder: "A futuristic neon-lit street in Hong Kong, cyberpunk style, ultra-detailed, 8K, cinematic lighting."
       value: ""
+    validations:
+      required: false
 
   - type: textarea
     id: tags
@@ -59,12 +61,14 @@ body:
       description: "Add relevant tags (e.g., cyberpunk, hongkong, anime, urban)"
       placeholder: "cyberpunk, hongkong, neon, futuristic"
       value: ""
+    validations:
+      required: false
 
   - type: dropdown
     id: aspect_ratio
     attributes:
       label: "5. Aspect Ratio (Recommended)"
-      description: "Preferred image ratio (e.g., 1:1, 16:9, 9:16, 3:4)"
+      description: "Preferred image ratio (e.g., 1:1, 16:9, 9:16)"
       options:
         - "1:1 (Square)"
         - "16:9 (Landscape)"
@@ -95,6 +99,8 @@ body:
       description: "Your prompt in Chinese (e.g., 神奇的香港霓虹街道，賽博朋克風格，超細節，8K，電影光線)"
       placeholder: "神奇的香港霓虹街道，賽博朋克風格，超細節，8K，電影光線"
       value: ""
+    validations:
+      required: false
 
   - type: textarea
     id: cover
@@ -103,6 +109,8 @@ body:
       description: "Link to a generated image or preview (e.g., https://example.com/image.jpg)"
       placeholder: "https://example.com/cover.jpg"
       value: ""
+    validations:
+      required: false
 
   - type: checkboxes
     id: agreement
