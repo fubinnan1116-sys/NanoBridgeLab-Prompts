@@ -1,8 +1,8 @@
 name: "Submit a Prompt Template"
-description: "Submit a new Prompt template for NanoBridge Lab"
+description: "Submit a new AI image generation prompt for NanoBridge Lab"
 title: "🚀 [Prompt] <Your Prompt Title>"
 labels: ["prompt", "new", "needs-review"]
-assignees: ["YourGitHubUsername"] # 可設為你或團隊成員
+assignees: ["YourGitHubUsername"] # 替換為你的帳號
 
 body:
   - type: markdown
@@ -14,59 +14,100 @@ body:
 
         Please fill in the following details:
 
-  - type: textarea
-    id: prompt
+  - type: input
+    id: title
     attributes:
-      label: "1. Your Prompt (English or Bilingual)"
-      description: "Please write your full prompt in English (or bilingual with Chinese). Include keywords, style, quality, and any special instructions."
-      value: "A beautiful neon-lit Hong Kong street at night, cyberpunk style, ultra-detailed, 8K, cinematic lighting, by Studio Ghibli and Blade Runner"
+      label: "1. Title (Required)"
+      description: "A short, descriptive title for your prompt (e.g. 'Cyberpunk Hong Kong Night')"
+      placeholder: "Cyberpunk Hong Kong Street"
+      value: ""
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: "2. Category (Required)"
+      description: "What type of content is this prompt designed for?"
+      options:
+        - "Informational Chart"
+        - "Personal Profile"
+        - "Social Media Post"
+        - "Poster"
+        - "Website Design"
+        - "Comics"
+        - "Commercial Product Photography"
+        - "YouTube Thumbnail"
+        - "Effects & Experimental"
+        - "PPT & Business Presentation"
+      value: "Informational Chart"
     validations:
       required: true
 
   - type: textarea
     id: description
     attributes:
-      label: "2. Description (Optional)"
-      description: "Briefly describe what this prompt generates (e.g., style, theme, use case)."
-      value: "A futuristic Hong Kong street scene with neon lights and cyberpunk elements."
-
-  - type: input
-    id: tags
-    attributes:
-      label: "3. Tags (e.g., 'cyberpunk', 'city', 'anime', 'fantasy')"
-      description: "Add relevant tags to help others find your prompt."
-      placeholder: "cyberpunk, hongkong, anime, urban"
-
-  - type: dropdown
-    id: platform
-    attributes:
-      label: "4. Platform Compatibility"
-      description: "Which AI platforms does this prompt work on?"
-      options:
-        - "Nano Banana Pro"
-        - "Midjourney"
-        - "DALL·E"
-        - "Leonardo.Ai"
-        - "Stable Diffusion"
-        - "Other (please specify)"
-
-  - type: input
-    id: author
-    attributes:
-      label: "5. Your Name (Optional)"
-      description: "We'll credit you if your prompt is featured."
-      placeholder: "John Chan"
+      label: "3. Description & Source (Optional)"
+      description: "Briefly describe what this prompt generates. Include inspiration or source (e.g., 'Inspired by Hong Kong neon signs')"
+      placeholder: "A futuristic neon-lit street in Hong Kong, cyberpunk style, ultra-detailed, 8K, cinematic lighting."
+      value: ""
 
   - type: textarea
-    id: reference
+    id: tags
     attributes:
-      label: "6. Reference (Optional)"
-      description: "Link to a generated image or inspiration (e.g., URL, screenshot)."
+      label: "4. Style/Tags (Optional)"
+      description: "Add relevant tags (e.g., cyberpunk, hongkong, anime, urban)"
+      placeholder: "cyberpunk, hongkong, neon, futuristic"
+      value: ""
+
+  - type: dropdown
+    id: aspect_ratio
+    attributes:
+      label: "5. Aspect Ratio (Recommended)"
+      description: "Preferred image ratio (e.g., 1:1, 16:9, 9:16, 3:4)"
+      options:
+        - "1:1 (Square)"
+        - "16:9 (Landscape)"
+        - "9:16 (Portrait)"
+        - "4:3 (Standard)"
+        - "3:2 (Photo)"
+        - "2:1 (Wide)"
+        - "1:2 (Tall)"
+        - "Other (custom)"
+      value: "1:1 (Square)"
+    validations:
+      required: true
+
+  - type: textarea
+    id: prompt_en
+    attributes:
+      label: "6. English Prompt (Required)"
+      description: "Your full prompt in English. Include keywords, style, quality, and any special instructions."
+      placeholder: "A beautiful neon-lit Hong Kong street at night, cyberpunk style, ultra-detailed, 8K, cinematic lighting, by Studio Ghibli and Blade Runner"
+      value: ""
+    validations:
+      required: true
+
+  - type: textarea
+    id: prompt_zh
+    attributes:
+      label: "7. Chinese Prompt (Optional)"
+      description: "Your prompt in Chinese (e.g., 神奇的香港霓虹街道，賽博朋克風格，超細節，8K，電影光線)"
+      placeholder: "神奇的香港霓虹街道，賽博朋克風格，超細節，8K，電影光線"
+      value: ""
+
+  - type: textarea
+    id: cover
+    attributes:
+      label: "8. Cover Image (Optional)"
+      description: "Link to a generated image or preview (e.g., https://example.com/image.jpg)"
+      placeholder: "https://example.com/cover.jpg"
+      value: ""
 
   - type: checkboxes
     id: agreement
     attributes:
-      label: "7. Agreement"
+      label: "9. Agreement"
       options:
         - label: "I confirm that I have the right to share this prompt."
           required: true
