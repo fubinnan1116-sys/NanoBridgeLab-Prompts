@@ -1,0 +1,74 @@
+name: "Submit a Prompt Template"
+description: "Submit a new Prompt template for NanoBridge Lab"
+title: "🚀 [Prompt] <Your Prompt Title>"
+labels: ["prompt", "new", "needs-review"]
+assignees: ["YourGitHubUsername"] # 可設為你或團隊成員
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🍌 Welcome to NanoBridge Lab Prompt Submission!
+
+        Thank you for contributing to our community! This is the official form to submit your **AI image generation prompt** for **Nano Banana Pro** and other compatible platforms.
+
+        Please fill in the following details:
+
+  - type: textarea
+    id: prompt
+    attributes:
+      label: "1. Your Prompt (English or Bilingual)"
+      description: "Please write your full prompt in English (or bilingual with Chinese). Include keywords, style, quality, and any special instructions."
+      value: "A beautiful neon-lit Hong Kong street at night, cyberpunk style, ultra-detailed, 8K, cinematic lighting, by Studio Ghibli and Blade Runner"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "2. Description (Optional)"
+      description: "Briefly describe what this prompt generates (e.g., style, theme, use case)."
+      value: "A futuristic Hong Kong street scene with neon lights and cyberpunk elements."
+
+  - type: input
+    id: tags
+    attributes:
+      label: "3. Tags (e.g., 'cyberpunk', 'city', 'anime', 'fantasy')"
+      description: "Add relevant tags to help others find your prompt."
+      placeholder: "cyberpunk, hongkong, anime, urban"
+
+  - type: dropdown
+    id: platform
+    attributes:
+      label: "4. Platform Compatibility"
+      description: "Which AI platforms does this prompt work on?"
+      options:
+        - "Nano Banana Pro"
+        - "Midjourney"
+        - "DALL·E"
+        - "Leonardo.Ai"
+        - "Stable Diffusion"
+        - "Other (please specify)"
+
+  - type: input
+    id: author
+    attributes:
+      label: "5. Your Name (Optional)"
+      description: "We'll credit you if your prompt is featured."
+      placeholder: "John Chan"
+
+  - type: textarea
+    id: reference
+    attributes:
+      label: "6. Reference (Optional)"
+      description: "Link to a generated image or inspiration (e.g., URL, screenshot)."
+
+  - type: checkboxes
+    id: agreement
+    attributes:
+      label: "7. Agreement"
+      options:
+        - label: "I confirm that I have the right to share this prompt."
+          required: true
+        - label: "I agree to the [Contribution Guidelines](#)."
+          required: true
